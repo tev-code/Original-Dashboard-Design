@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200;400;600&display=swap');
+
 * {
     box-sizing: border-box;
 }
@@ -5,7 +7,9 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Roboto Mono', monospace;
+    background: #080808;
+    color: whitesmoke;
 }
 
 header {
@@ -16,12 +20,13 @@ header {
 
 .container {
   display: flex;
+  height: 100vh;
 }
 
 .sidebar {
   flex: 0 0 20%; /* Adjust the width as needed */
-  background-color: #6b6b6b;
-  height: 100vh; /* Set the height to 100% of viewport height */
+  background-color: #b30631;
+  height: 100%; /* Set the height to 100% of viewport height */
 }
 
 .content {
@@ -36,15 +41,70 @@ header {
 .box {
   flex: 0 0 calc(20% - 20px);
   aspect-ratio: 1/1;
-  background-color: #f1f1f1;
+  background-color: rgb(59, 59, 59);
   width: 300px;
   height: 50px;
   margin: 10px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 375px) {
+  .container {
+    flex-direction: column;
+  }
+  .sidebar {
+    flex: 0 0 100%;
+    height: auto;
+    min-height: 500px;
+  }
+  .content {
+    flex-direction: column;
+  }
+  .box {
+    flex: 0 0 calc(100%-20px);
+    width: 200px;
+    height: auto;
+    margin: 10px;
+  }
+}
+
+@media (min-width: 376px) and (max-width: 758px) {
   .box {
     flex-basis: calc(33.33% - 20px);
   }
 }
 
+@media (min-width: 769px) and (max-width: 1024px) {
+  .sidebar {
+    flex: 0 0 25%;
+  }
+  .box {
+    flex: 0 0 calc(25% - 20px)
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1366px) {
+  .sidebar {
+    flex: 0 0 20%;
+  }
+  .box {
+    flex: 0 0 calc(20% - 20px);
+  }
+}
+
+@media (min-width: 1367px) and (max-width: 1920px) {
+  .sidebar {
+    flex: 0 0 15%;
+  }
+  .box {
+    flex: 0 0 calc(15% - 20px);
+  }
+}
+
+@media (min-width: 1921px) {
+  .sidebar {
+    flex: 0 0 10%;
+  }
+  .box {
+    flex: 0 0 calc(10% - 20px);
+  }
+}
