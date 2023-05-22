@@ -8,24 +8,25 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Roboto Mono', monospace;
-    background: #080808;
-    color: whitesmoke;
+    background: rgb(223, 223, 223);
+    color:rgb(71, 71, 71);
 }
 
 header {
-    background-color: #333;
-    color: #fff;
+    background-color: #d0bdf4;
+    color: #0f0f0f;
     padding: 10px;
 }
 
 .container {
   display: flex;
   height: 100vh;
+  overflow-x: hidden;
 }
 
 .sidebar {
   flex: 0 0 20%; /* Adjust the width as needed */
-  background-color: #b30631;
+  background-color: #8458B3;
   height: 100%; /* Set the height to 100% of viewport height */
 }
 
@@ -41,10 +42,12 @@ header {
 .box {
   flex: 0 0 calc(20% - 20px);
   aspect-ratio: 1/1;
-  background-color: rgb(59, 59, 59);
+  background-color: #a28089;
   width: 300px;
   height: 50px;
   margin: 10px;
+  text-align: center;
+  align-items: center;
 }
 
 @media (max-width: 375px) {
